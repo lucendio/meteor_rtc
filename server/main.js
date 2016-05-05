@@ -2,7 +2,7 @@
 'use strict';
 
 
-import './../shared/polyfills/object.merge';
+import './../shared/shims/object.merge';
 
 import './allow-deny-rules/signalings.allow';
 import './allow-deny-rules/signalings.deny';

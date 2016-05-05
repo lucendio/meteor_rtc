@@ -12,7 +12,7 @@ Package.describe({
 
 Package.onUse( function( api ){
 
-    api.versionsFrom( '1.3.2' );
+    api.versionsFrom( 'METEOR@1.3' );
     
     
     Npm.depends({
