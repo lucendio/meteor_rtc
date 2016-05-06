@@ -163,6 +163,7 @@ A simple getter for an existing connection.
 
 ### Checklist
 
+- [X]   abstracting webrtc and providing basic API 
 - [X]   support data and media
 - [X]   major refactoring towards ES6 modules
 - [ ]   round up API (remove incoming handler, temp. blocking, document existing events, ...)

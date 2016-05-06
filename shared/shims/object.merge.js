@@ -4,8 +4,15 @@
 
 // src: https://github.com/tc39/proposal-object-getownpropertydescriptors
 
+// NOTE: requires the `Reflect` API. Meteor 1.3 shims this, that's why
+// it works here
+
 
 (function( globalNamespace ){
+    
+    if( typeof Reflect === 'undefined' || typeof Reflect.ownKeys !== 'function' ){
+        return;
+    }
     
     const Object = globalNamespace.Object;
     
@@ -27,7 +34,7 @@
         });
     }
 
-    // Step 2: adding Object.merge, to fix Object.assign (failing to copy setters & getters)
+    // Step 2: adding Object.merge, to fix Object.assign (which does not copy setters & getters)
     if( !Object.hasOwnProperty( 'merge' ) ){
         Object.merge = function( target, ...sources ){
             sources.reduce( ( target, source )=>{
